@@ -1,10 +1,6 @@
 # LIMO-NUL
 A Sesotho-Language RISC-V Processor and Pipeline Simulator
-CS3520 — National University of Lesotho
-
-# LIMO-NUL
-A Sesotho-Language RISC-V Processor and Pipeline Simulator
-CS3520 — National University of Lesotho
+CS3520 — National University of Lesotho 
 
 ## Team
 | Name | Student Number | GitHub | Role (Week 7) |
