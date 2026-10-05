@@ -9,7 +9,7 @@ CS3520 — National University of Lesotho
 | Thulo | 202322270 | @recocipher-beep | Team charter & PDF |
 | Qaba | 202002573 | @qabamothe | |
 | Lepitla | 202201975 | @Thatosh | |
-| Leputla | |202403700 | @TumeloLeputla2006 |
+| Leputla | 202403700 | @TumeloLeputla2006 |  |
 | Jaden | | | |
 
 ## Live Simulator
