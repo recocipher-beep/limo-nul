@@ -1,0 +1,22 @@
+# ============================================================
+# PROGRAM 2: Logic and Shift Operations
+# File: p2_logic.limo
+# Purpose: and, or, and-immediate, shift-left, shift-left-immediate
+# Expected results:
+#   r3 = 6
+#   r4 = 3
+#   r5 = 2    (6 AND 3  = 0110 & 0011 = 0010)
+#   r6 = 7    (6 OR  3  = 0110 | 0011 = 0111)
+#   r7 = 4    (6 AND 12 = 0110 & 1100 = 0100)
+#   r8 = 48   (6 << 3   = 0110 << 3 = 110000 = 48)
+#   r9 = 24   (6 << 2   = 0110 << 2 = 11000 = 24)
+# Cycle count (no stalls, forwarding ON): 7 instructions + 4 = 11 cycles
+# ============================================================
+
+eketsa_ha r3, r0, 6      # r3 = 6
+eketsa_ha r4, r0, 3      # r4 = 3
+kopanya   r5, r3, r4     # r5 = 6 AND 3 = 2
+hlopha    r6, r3, r4     # r6 = 6 OR  3 = 7
+kopanya_ha r7, r3, 12    # r7 = 6 AND 12 = 4
+fetola    r8, r3, r4     # r8 = 6 << 3 = 48
+fetola_ha r9, r3, 2      # r9 = 6 << 2 = 24
