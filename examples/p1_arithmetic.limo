@@ -1,0 +1,22 @@
+# ============================================================
+# PROGRAM 1: Simple Arithmetic
+# File: p1_arithmetic.limo
+# Purpose: Basic add, subtract, add-immediate
+# Expected results:
+#   r3 = 5
+#   r4 = 3
+#   r5 = 8    (r3 + r4)
+#   r6 = 2    (r3 - r4)
+#   r7 = 15   (r3 + 10)
+#   r8 = 10   (r5 + r6)
+#   r9 = 7    (r7 - r5)
+# Cycle count (no stalls, forwarding ON): 7 instructions + 4 = 11 cycles
+# ============================================================
+
+eketsa_ha r3, r0, 5      # r3 = 0 + 5 = 5
+eketsa_ha r4, r0, 3      # r4 = 0 + 3 = 3
+eketsa    r5, r3, r4     # r5 = 5 + 3 = 8
+fokotsa   r6, r3, r4     # r6 = 5 - 3 = 2
+eketsa_ha r7, r3, 10     # r7 = 5 + 10 = 15
+eketsa    r8, r5, r6     # r8 = 8 + 2 = 10
+fokotsa   r9, r7, r5     # r9 = 15 - 8 = 7

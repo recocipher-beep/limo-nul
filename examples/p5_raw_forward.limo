@@ -1,0 +1,20 @@
+# ============================================================
+# PROGRAM 5: RAW Hazard with Forwarding
+# File: p5_raw_forward.limo
+# Purpose: Back-to-back dependent arithmetic (no load involved)
+# Expected results:
+#   r3 = 5
+#   r4 = 3
+#   r5 = 8    (r3 + r4)
+#   r6 = 5    (r5 - r4)
+#   r7 = 13   (r5 + r6)
+# Cycle count:
+#   Forwarding ON:  5 instructions + 4 = 9 cycles, 0 stalls
+#   Forwarding OFF: 5 instructions + 4 + 6 stalls = 15 cycles
+# ============================================================
+
+eketsa_ha r3, r0, 5      # r3 = 5
+eketsa_ha r4, r0, 3      # r4 = 3
+eketsa    r5, r3, r4     # r5 = 8    (RAW on r3, r4 -- forwarded)
+fokotsa   r6, r5, r4     # r6 = 5    (RAW on r5 -- forwarded)
+eketsa    r7, r5, r6     # r7 = 13   (RAW on r5, r6 -- forwarded)
