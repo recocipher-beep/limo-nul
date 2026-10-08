@@ -1,0 +1,23 @@
+# ============================================================
+# PROGRAM 3: Load and Store
+# File: p3_memory.limo
+# Purpose: Store to memory, load back, verify
+# Expected results:
+#   MEM[0] = 42
+#   MEM[4] = 99
+#   r3 = 42
+#   r4 = 99
+#   r5 = 141   (42 + 99)
+#   r6 = 142   (r5 + 1)
+# Cycle count (forwarding ON, 1 load-use stall): 9 instructions + 4 + 1 = 14 cycles
+# ============================================================
+
+eketsa_ha r1, r0, 0      # r1 = 0   (base address)
+eketsa_ha r2, r0, 42     # r2 = 42
+boloka    r2, 0(r1)      # MEM[0] = 42
+eketsa_ha r2, r0, 99     # r2 = 99
+boloka    r2, 4(r1)      # MEM[4] = 99
+kenya     r3, 0(r1)      # r3 = MEM[0] = 42
+kenya     r4, 4(r1)      # r4 = MEM[4] = 99
+eketsa    r5, r3, r4     # r5 = 42 + 99 = 141   <-- load-use stall here
+eketsa_ha r6, r5, 1      # r6 = 141 + 1 = 142
