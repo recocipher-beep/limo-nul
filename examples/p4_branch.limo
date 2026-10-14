@@ -1,0 +1,27 @@
+# ============================================================
+# PROGRAM 4: Branch Taken and Not Taken
+# File: p4_branch.limo
+# Purpose: Show beq taken (flush) and bne not taken (no flush)
+# Expected results:
+#   r3 = 1
+#   r4 = 1
+#   r5 = 10
+#   r6 = 20
+#   r7 = 30
+# Cycle count:
+#   Taken branch: 5 executed instructions + 4 + 2 flushes = 11 cycles
+#   Not-taken branch: no flush
+#   Full program: approximately 11 + 9 - overlap = 18-19 cycles
+# ============================================================
+
+eketsa_ha r3, r0, 1      # r3 = 1
+eketsa_ha r4, r0, 1      # r4 = 1
+tabola_ha r3, r4, skip   # r3 == r4, so branch TAKEN to skip
+eketsa_ha r5, r0, 99     # FLUSHED (wrong-path)
+eketsa_ha r5, r0, 100    # FLUSHED (wrong-path)
+skip:
+eketsa_ha r5, r0, 10     # r5 = 10
+tabola_eseng r3, r4, end # r3 == r4, so branch NOT taken
+eketsa_ha r6, r0, 20     # r6 = 20
+end:
+eketsa_ha r7, r0, 30     # r7 = 30
