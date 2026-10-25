@@ -2,26 +2,32 @@
 
 **Team:** LIMO-NUL
 **Milestone:** M2 — Simulator Design
+**Submitted by:** Thato Lepitla (Scrum and release lead)
 
 ## Done
 - ISA specification frozen based on D1 feedback
 - Site live on GitHub Pages (UI draft)
-- Assembler core developed:
-  - Dictionary of 20 instructions (`src/assembler.js`)
-  - Parser for labels, comments, and operands (`src/parser.js`)
-  - Encoders for R, I, S, B, and J formats (`src/encoder.js`)
-  - Main assembly function and error handling (`src/main.js`)
-  - Automated unit tests using hand-encoded ISA examples (`tests/assembler.test.js`)
-  - Initial HTML structure for the UI (`index.html`)
-- Pipeline data model designed (stages: IF, ID, EX, MEM, WB)
+- Assembler core: instruction dictionary (src/assembler.js), parser (src/parser.js), encoders (src/encoder.js), main assembly function with error handling (src/main.js)
+- Automated unit tests for the assembler (tests/assembler.test.js)
+- Initial HTML structure for the UI (index.html)
+- Pipeline data model designed (IF, ID, EX, MEM, WB)
 - Interface wireframes completed
 
+## Not done
+- M2 milestone PDF (block diagram, pipeline-register data model, wireframes) still to be assembled
+- PR #11 (LIMO_ISA_M1.pdf) still open and unreviewed
+- m2 release tag not yet created
+
+## Next (M3)
+- Pipeline core: five stages, pipeline registers, control unit
+- Step/Run/Reset and register and memory views
+
 ## Who did what
-| Name | GitHub | Contribution this sprint |
-|------|--------|--------------------------|
-| Setente | @Setente | Built assembler core (parser, encoders, main logic), unit tests, and UI HTML structure. |
-| Thulo | @recocipher-beep | (e.g., Pipeline data model, team coordination) |
-| Qaba | @qabamothe | (e.g., Control unit design) |
-| Lepitla | @Thatosh | (e.g., Test strategy) |
-| Leputla | @... | (Add what they did) |
-| Jaden | @... | (Add what they did) |
+| Name | GitHub | Role this sprint | Contribution |
+|------|--------|------------------|--------------|
+| Tshebetso | (add) | ISA architect | Carried out the ISA architect role: ISA specification frozen with D1 feedback |
+| Setente | @Setente | Assembler lead | Assembler core (parser, encoders, main logic), unit tests, UI HTML structure |
+| Thulo | @recocipher-beep | Test lead | Carried out the test lead role |
+| Leputla | @TumeloLeputla2006 | Pipeline lead (and hazards) | Carried out the pipeline lead role: pipeline data model |
+| Moeketsi | @qabamothe | Interface lead | Carried out the interface lead role: interface wireframes |
+| Thato Lepitla | @Thatosh | Scrum and release lead | Rewrote the sprint note |
